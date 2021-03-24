@@ -1,4 +1,6 @@
 nav {
+  display: flex;
+  justify-content: space-between;
   height: 120px;
   width: 100%;
   position: fixed;
@@ -7,4 +9,22 @@ nav {
   color: #ffffff;
   font-family: Bungee, Source Sans Pro;
   padding: 1.5em;
+}
+
+nav div {
+  /* watch out, this nav div might mess up something else later */
+  font-family: Source Sans Pro;
+
+}
+
+nav div.tweet-arrow {
+  display: inline-block;
+  flex-direction: column;
+  align-content: center;
+}
+
+nav i.fas {
+  display: flex;
+  margin-left: 80px;
+  padding-top: 10px;
 }
