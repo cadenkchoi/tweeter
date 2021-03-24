@@ -1,7 +1,7 @@
-.tweet-container {
+.tweet {
+  border: black 4px solid;
   display: flex;
   flex-direction: column;
-  border: black 4px solid;
   padding: 2%;
   margin-top: 25px;
   margin-bottom: 50px;
@@ -72,11 +72,11 @@
   color: #6bebb1;
 }
 
-section.tweet-container:hover .tweet-handle{
+article.tweet:hover .tweet-handle{
   display: flex;
 }
 
-section.tweet-container:hover {
+article.tweet:hover {
   box-shadow: 10px 10px #e4bad4;
 }
 
