@@ -1,0 +1,68 @@
+.tweet-container {
+  display: flex;
+  flex-direction: column;
+  border: black 4px solid;
+  padding: 2%;
+  margin-top: 25px;
+}
+
+.tweet-body {
+  display: flex;
+  border-bottom: black 4px solid;
+  width: 98%;
+  padding-bottom: 2%;
+  clear: left;
+  padding-left: 20px;
+  padding-right: 20px;
+  font-family: 'Source sans pro', sans-serif;
+}
+
+.names1 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.pic-name {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+}
+
+.tweet-img {
+  height: 50px;
+  width: 50px;
+}
+
+.tweet-username {
+  display: flex;
+  padding-left: 15px;
+}
+
+.tweet-handle {
+  display: absolute;
+  opacity: 0.5;
+  top: 0;
+  right: 0;
+  padding-right: 10px;
+}
+
+.tweet-footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+}
+
+.tweet-timestamp {
+  display: flex;
+  align-content: flex-start;
+  padding-top: 50px;
+}
+
+.tweet-icons {
+  display: flex;
+
+  align-items: flex-end;
+}
