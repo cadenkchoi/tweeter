@@ -1,7 +1,9 @@
 header.user-header {
   height: 400px;
   width: 100%;
-  background: #45ffa2;
+  margin-top: 120px;
+  /* background: #45ffa2; */
+  background: #9dffd3;
   background-image: url("https://www.transparenttextures.com/patterns/escheresque.png");
 }
 
@@ -9,6 +11,7 @@ header.user-header {
   display: flex;
   justify-content: center;
   align-items: center;
+  /* opacity: 0.8; */
   /* margin-top: 5rem; makes space between the blue and green*/ 
 }
 
@@ -17,6 +20,7 @@ header.user-header {
   justify-content: center;
   align-items: center;
   color: #FFFFFF;
+  /* opacity: 0.8; */
 }
 
 h2 {

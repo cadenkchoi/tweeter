@@ -4,6 +4,7 @@
   border: black 4px solid;
   padding: 2%;
   margin-top: 25px;
+  margin-bottom: 50px;
 }
 
 .tweet-body {
@@ -14,6 +15,7 @@
   clear: left;
   padding-left: 20px;
   padding-right: 20px;
+  margin-top: 20px;
   font-family: 'Source sans pro', sans-serif;
 }
 
@@ -22,6 +24,7 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  margin: -15px;
 }
 
 .pic-name {
@@ -41,8 +44,7 @@
 }
 
 .tweet-handle {
-  display: absolute;
-  opacity: 0.5;
+  display: none;
   top: 0;
   right: 0;
   padding-right: 10px;
@@ -52,17 +54,29 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-
 }
 
 .tweet-timestamp {
   display: flex;
-  align-content: flex-start;
+  align-items: flex-start;
   padding-top: 50px;
+  margin: -0.7px;
 }
 
 .tweet-icons {
   display: flex;
-
   align-items: flex-end;
+  width: 7%;
+  margin-right: 20px;
+  justify-content: space-around;
+  color: #6bebb1;
 }
+
+section.tweet-container:hover .tweet-handle{
+  display: flex;
+}
+
+section.tweet-container:hover {
+  box-shadow: 10px 10px #e4bad4;
+}
+
