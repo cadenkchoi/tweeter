@@ -6,23 +6,43 @@
 
 // Fake data taken from initial-tweets.json
 // Test / driver code (temporary). Eventually will get this from the server.
+
 $(document).ready(function() {
   $(".compose-tweet").submit(function(event){
     event.preventDefault();
     let tweetMsg = $('.compose-tweet').serialize();
     if(!$('#tweet-text').val()) {
-      alert('Empty Tweet! Please Try Again!');
+      $('#error-message-container').html('&#9888; Empty Tweet! Please Try Again! &#9888;').slideDown().delay(3000).fadeOut();
     } else if ($('#tweet-text').val().length > 140) {
-      alert('Please type less than 140 characters!')
+      $('#error-message-container').html('&#9888; Please type less than 140 characters! &#9888;').slideDown().delay(3000).fadeOut();
     } else {
       $.ajax({
         method: "POST",
         url: "/tweets",
         data: tweetMsg,
       })
-      .then(loadTweets);
+      .then(() => {
+        $('.tweet-container').empty();
+        loadTweets();
+      })
+      .then(() => {
+        this.reset();
+      })
     }
   });
+
+  const escape =  function(str) {
+    let div = document.createElement('div');
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  }
+
+  const loadTweets = function() {
+    $.get("/tweets", function(res) {
+      renderTweets(res);
+    })
+  }
+  loadTweets();
 
   const renderTweets = function(tweets) {
     for (const tweet of tweets) {
@@ -31,23 +51,17 @@ $(document).ready(function() {
     }
   }
 
-  const loadTweets = function() {
-    $.get("/tweets", function(res) {
-      renderTweets(res);
-    })
-  }
-
   const createTweetElement = function(tweet) {
     const $tweet = (`
     <article class="tweet">
     <header class="names1">
       <div class="pic-name">
         <img class="tweet-img" src="${tweet.user.avatars}" alt="">
-        <h4 class="tweet-username">${tweet.user.name}</h4>
+        <h4 class="tweet-username">${escape(tweet.user.name)}</h4>
       </div>
-      <h4 class="tweet-handle">${tweet.user.handle}</h4>
+      <h4 class="tweet-handle">${escape(tweet.user.handle)}</h4>
     </header>
-    <span class="tweet-body">${tweet.content.text}</span>
+    <span class="tweet-body">${escape(tweet.content.text)}</span>
     <footer class="tweet-footer">
       <h4 class="tweet-timestamp">${tweet.created_at}</h4>
       <div class="tweet-icons">

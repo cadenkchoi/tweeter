@@ -23,7 +23,32 @@ button {
   background-color: #e4bad4;
 }
 
-.negativeCounter {
+.redText {
   color: red;
+}
+
+.negativeCounter {
+  animation: blinkingText 0.9s infinite;
+}
+@keyframes blinkingText{
+  0%{     color: red;    }
+  49%{    color: red; }
+  60%{    color: transparent; }
+  99%{    color: transparent;  }
+  100%{   color: red;    }
+}
+
+#error-message-container {
+  align-items: center;
+  text-align: center;
+  color: #ff7171;
+  display: none;
+  border: #ff7171 solid 4px;
+  border-radius: 8px;
+  width: 50%;
+  margin-top: 2%;
+  margin-bottom: 2%;
+  margin-left: 25%;
+  margin-right: 25%;
 }
 

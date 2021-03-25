@@ -9,6 +9,7 @@
 
 .tweet-body {
   display: flex;
+  justify-content: flex-start;
   border-bottom: black 4px solid;
   width: 98%;
   padding-bottom: 2%;
@@ -17,6 +18,7 @@
   padding-right: 20px;
   margin-top: 20px;
   font-family: 'Source sans pro', sans-serif;
+  
 }
 
 .names1 {
