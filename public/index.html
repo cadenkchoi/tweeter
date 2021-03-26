@@ -2,6 +2,7 @@
 <html lang="en">
   <head>
     <!-- Meta Information -->
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />
     <title>Tweeter - Home Page</title>
 
     <!-- External CSS -->
@@ -10,14 +11,17 @@
     <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+Pro:ital,wght@0,300;0,700;1,300;1,700&display=swap" rel="stylesheet">
 
     <!-- App CSS -->
-    <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
     <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
     <link rel="stylesheet" href="/styles/header.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
     <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
     <link rel="stylesheet" href="/styles/tweets.css" type="text/css" />
 
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"
+    integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ=="
+    crossorigin="anonymous"></script>
 
     <!-- App JS -->
     <script type="text/javascript" src="/scripts/client.js"></script>
@@ -34,10 +38,10 @@
         <br><i class="fas fa-angle-double-down"></i>
       </div>
     </nav>
-    
+    <div class="desktop">
     <header class="user-header">
       <div class="avatar">
-          <img src="/images/profile-hex.png"> 
+          <img src="/images/iu.png"> 
       </div>
       <br>
       <div class="h2-container">
@@ -63,5 +67,6 @@
       <section class="tweet-container">
       </section>
     </main>
+    </div>
   </body>
 </html>

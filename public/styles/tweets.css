@@ -8,17 +8,18 @@
 }
 
 .tweet-body {
-  display: flex;
-  justify-content: flex-start;
+  display: inline-block;
+  /* display: flex; had to change this so that overflow-wrap would work  */ 
+  /* justify-content: flex-start; */
   border-bottom: black 4px solid;
-  width: 98%;
+  min-width: 50%;
   padding-bottom: 2%;
   clear: left;
   padding-left: 20px;
   padding-right: 20px;
   margin-top: 20px;
   font-family: 'Source sans pro', sans-serif;
-  
+  overflow-wrap: break-word;
 }
 
 .names1 {

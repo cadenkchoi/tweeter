@@ -10,8 +10,6 @@ header.user-header {
   display: flex;
   justify-content: center;
   align-items: center;
-  /* opacity: 0.8; */
-  /* margin-top: 5rem; makes space between the blue and green*/ 
 }
 
 .h2-container {
@@ -19,7 +17,6 @@ header.user-header {
   justify-content: center;
   align-items: center;
   color: #FFFFFF;
-  /* opacity: 0.8; */
 }
 
 h2 {

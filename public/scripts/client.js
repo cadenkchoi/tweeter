@@ -23,6 +23,7 @@ $(document).ready(function() {
       })
       .then(() => {
         $('.tweet-container').empty();
+        //location.reload();
         loadTweets();
       })
       .then(() => {
@@ -51,6 +52,10 @@ $(document).ready(function() {
     }
   }
 
+  const timeSinceTweet = (unix) => {
+    return moment(unix).fromNow();
+  };
+
   const createTweetElement = function(tweet) {
     const $tweet = (`
     <article class="tweet">
@@ -63,7 +68,7 @@ $(document).ready(function() {
     </header>
     <span class="tweet-body">${escape(tweet.content.text)}</span>
     <footer class="tweet-footer">
-      <h4 class="tweet-timestamp">${tweet.created_at}</h4>
+      <h4 class="tweet-timestamp">${timeSinceTweet(tweet.created_at)}</h4>
       <div class="tweet-icons">
         <i class="fas fa-flag"></i>
         <i class="fas fa-retweet"></i>
