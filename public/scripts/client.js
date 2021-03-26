@@ -8,10 +8,10 @@
 // Test / driver code (temporary). Eventually will get this from the server.
 
 $(document).ready(function() {
-  $(".compose-tweet").submit(function(event){
+  $(".compose-tweet").submit(function(event) {
     event.preventDefault();
     let tweetMsg = $('.compose-tweet').serialize();
-    if(!$('#tweet-text').val()) {
+    if (!$('#tweet-text').val()) {
       $('#error-message-container').html('&#9888; Empty Tweet! Please Try Again! &#9888;').slideDown().delay(3000).fadeOut();
     } else if ($('#tweet-text').val().length > 140) {
       $('#error-message-container').html('&#9888; Please type less than 140 characters! &#9888;').slideDown().delay(3000).fadeOut();
@@ -21,14 +21,14 @@ $(document).ready(function() {
         url: "/tweets",
         data: tweetMsg,
       })
-      .then(() => {
-        $('.tweet-container').empty();
-        //location.reload();
-        loadTweets();
-      })
-      .then(() => {
-        this.reset();
-      })
+        .then(() => {
+          $('.tweet-container').empty();
+          //location.reload();
+          loadTweets();
+        })
+        .then(() => {
+          this.reset();
+        });
     }
   });
 
@@ -36,13 +36,13 @@ $(document).ready(function() {
     let div = document.createElement('div');
     div.appendChild(document.createTextNode(str));
     return div.innerHTML;
-  }
+  };
 
   const loadTweets = function() {
     $.get("/tweets", function(res) {
       renderTweets(res);
-    })
-  }
+    });
+  };
   loadTweets();
 
   const renderTweets = function(tweets) {
@@ -50,7 +50,7 @@ $(document).ready(function() {
       let newTweets = createTweetElement(tweet);
       $('.tweet-container').prepend(newTweets);
     }
-  }
+  };
 
   const timeSinceTweet = (unix) => {
     return moment(unix).fromNow();
@@ -78,6 +78,6 @@ $(document).ready(function() {
     </article>
     `);
     return $tweet;
-  }
+  };
 });
 
